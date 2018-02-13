@@ -1,0 +1,51 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IIM Varanasi Chapter</title>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href='{% static "bootstrap/css/bootstrap.min.css" %}'>
+	<script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+    <script src='{% static "bootstrap/js/bootstrap.min.js" %}'></script>
+	<link rel="stylesheet" type="text/css" href='{% static "styl31.css" %}'>
+
+
+</head>
+<body  data-spy="scroll">
+ <div class="container-fluid">
+ <img class="hidden-xs" src='{% static "img/logo.jpg" %}'/>
+  <div class="h3ad3r " >	
+		
+       <div class="n4v well">
+        <ul class="nav nav-tabs nav-justified navbar-fixed">
+         <li ><a href="/index">Home</a></li>
+         <li ><a href="/aboutus">About Us</a></li>
+        <li class='active' ><a href="/events">Events</a></li>         
+        <li><a href="/achievements">Achievements</a></li>
+         <li><a href="/memberlist">Member List</a></li>
+         <li><a href="/executivecouncil">Executive Council</a></li>      
+         
+         <li><a href="/photogallery">Photo Gallery</a></li>
+         <li ><a href="/contactus">Contact Us</a></li>
+        
+       </ul>
+    </div>
+</div>
+
+<div class=" container col-md-8 col-md-offset-2">
+  {% for event in events %}
+  <div class = "single event">
+    {% if event.image %}
+    <div class='img'>
+    <img width = "70%" src="{{ event.image.url }}">
+    </div>
+    {% endif %}
+    <h2>{{event.title}}</h2>
+    <h4>{{event.description}}</h4>
+    <h4>Venue : {{ event.venue }}</h2>
+      <small>{{event.date}}</small>
+    <br><br><br><br><br><br><br>    
+    </div>
+  {% endfor %}
+  </div>

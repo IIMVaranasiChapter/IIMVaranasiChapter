@@ -1,0 +1,137 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IIM Varanasi Chapter</title>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href='{% static "bootstrap/css/bootstrap.min.css" %}'>
+    <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+    <script src='{% static "bootstrap/js/bootstrap.min.js" %}'></script>
+    <link rel="stylesheet" type="text/css" href='{% static "styl31.css" %}'>
+
+
+</head>
+<body  data-spy="scroll">
+ <div class="container-fluid">
+ <img class="hidden-xs" src='{% static "img/logo.jpg" %}'/>
+  <div class="h3ad3r " >    
+        
+       <div class="n4v well">
+        <ul class="nav nav-tabs nav-justified navbar-fixed">
+         <li ><a href="/index">Home</a></li>
+         <li class='active' ><a href="/aboutus">About Us</a></li>
+        <li><a href="/events">Events</a></li>         
+        <li><a href="/achievements">Achievements</a></li>
+         <li><a href="/memberlist">Member List</a></li>
+         <li><a href="/executivecouncil">Executive Council</a></li>      
+         
+         <li><a href="/photogallery">Photo Gallery</a></li>
+         <li ><a href="/contactus">Contact Us</a></li>
+        
+       </ul>
+    </div>
+</div>
+
+
+    <!-- Page Content -->
+    <div class="container col-md-8 col-md-offset-2">
+
+        <!-- Introduction Row -->
+        
+
+        <!-- Team Members Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Executive Members</h2>
+            </div>
+            {% for image in list %}
+            <div class="col-lg-4 col-sm-6 text-center">
+                <div class="col-md-12 text-center"><img class="col-md-8 col-md-offset-2 img-circle img-responsive img-center" width="100%" src="{{image.images.url}}" alt=""></div>
+                <h4 class="col-md-12 text-center"><strong>{{image.name}}</strong><br> 
+                    <small>{{image.position}}</small>
+                </h4>
+                <p>{{image.description}}</p>
+            </div>
+            {% endfor %}
+            <!--
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" width="70%" src="img/exe/manna.jpg" alt="">
+                <h4><strong>Dr.Rampada Manna</strong><br>
+                    <small>Chairman</small>
+                </h4>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" width="70%" src="img/exe/kc.jpg" alt="">
+                <h4><strong>Dr.Kausik Chattopadhyay</strong><br>
+                    <small>Vice-Chairman</small>
+                </h4>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+			<div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" width="70%" src="img/exe/vj.jpg" alt="">
+                <h4><strong>Dr.Vikas Jindal</strong><br>
+                    <small>Honarary Secretary</small>
+                </h4>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" width="70%" src="img/exe/basu.jpg" alt="">
+                <h4><strong>Dr.J.Basu</strong><br>
+                    <small>Honarary Treasurer</small>
+                </h4>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" width="70%" src="img/exe/bns.jpg" alt="">
+                <h4><strong>Prof . B.N.Sarma</strong><br>
+                    <small>Ex-Chairperson</small>
+                </h4>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+            
+			 <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" width="70%" src="img/exe/nkm.jpg" alt="">
+                <h4><strong>Prof . N.K.Mukhopadhyay</strong><br>
+                    <small>Head of Department, Member</small>
+                </h4>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+			<div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" width="70%" src="img/exe/mandal.jpg" alt="">
+                <h4><strong>Prof . R.K.Mandal</strong><br>
+                    <small>Member</small>
+                </h4>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+			 <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" width="70%" src="img/exe/gvs.jpg" alt="">
+                <h4><strong>Prof.G.V.S.Sastry</strong><br>
+                    <small>Member</small>
+                </h4>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+			 <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" width="70%" src="img/exe/def.png" alt="">
+                <h4><strong>Shri Amitabh Deva</strong><br>
+                    <small>Member</small>
+                </h4>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+            -->
+        </div>
+
+        <hr>
+</div>
+        <!-- Footer -->
+        
+    <script src='{% static "js/jquery.js" %}'></script>
+
+    <!-- Bootstrap Core JavaScript -->
+
+    <script src='{% static "js/bootstrap.min.js" %}'></script>
+
+</body>
+
+</html>

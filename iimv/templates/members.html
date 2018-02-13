@@ -1,0 +1,116 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IIM Varanasi Chapter</title>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href='{% static "bootstrap/css/bootstrap.min.css" %}'>
+    <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+    <script src='{% static "bootstrap/js/bootstrap.min.js" %}'></script>
+    <link rel="stylesheet" type="text/css" href='{% static "styl31.css" %}'>
+
+
+</head>
+<body  data-spy="scroll">
+ <div class="container-fluid">
+ <img class="hidden-xs" src='{% static "img/logo.jpg" %}'/>
+  <div class="h3ad3r " >    
+        
+       <div class="n4v well">
+        <ul class="nav nav-tabs nav-justified navbar-fixed">
+         <li ><a href="/index">Home</a></li>
+         <li class='active' ><a href="/aboutus">About Us</a></li>
+        <li><a href="/events">Events</a></li>         
+        <li><a href="/achievements">Achievements</a></li>
+         <li><a href="/memberlist">Member List</a></li>
+         <li><a href="/executivecouncil">Executive Council</a></li>      
+         
+         <li><a href="/photogallery">Photo Gallery</a></li>
+         <li ><a href="/contactus">Contact Us</a></li>
+        
+       </ul>
+    </div>
+</div>
+
+<div class="container">
+  <h2>Members List of Varanasi(VO1) Chapter:</h2>
+  <p></p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Catagory</th>
+        <th>No. of People</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Associate Member(ASM)</td>
+        <td>14</td>
+        <td><a href="/memberlist/ASM">Download</a></td>
+      </tr>
+      <tr>
+        <td>Life Member(LM)</td>
+        <td>25</td>
+        <td><a href="/memberlist/LM">Download</a></td>
+      </tr>
+      <tr>
+        <td>Life Fellow(LF)</td>
+        <td>10</td>
+        <td><a href="/memberlist/LF">Download</a></td>
+      </tr>
+	  <tr>
+        <td>Fellow Member(FM)</td>
+        <td>1</td>
+        <td><a href="/memberlist/FIM02">Download</a></td>
+      </tr>
+	  <tr>
+        <td>Honorary Member(OR)</td>
+        <td>1</td>
+        <td><a href="/memberlist/ORM">Download</a></td>
+      </tr>
+	  <tr>
+        <td>Sustaining Member(SM)</td>
+        <td>1</td>
+        <td><a href="/memberlist/SM">Download</a></td>
+      </tr>
+	  <tr>
+        <td>Student Member(ST)</td>
+        <td>309</td>
+        <td><a href="/memberlist/ST">Download</a></td>
+      </tr>
+	  <tr>
+        <td><strong>Total</strong></td>
+        <td><strong>375</strong></td>
+        <td><a href="/memberlist/Total"><strong>Download</strong></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-md-12 container" >
+	<div class="table">
+		<script type="text/javascript"charset="utf-8">
+            d3.text("list/mem.csv", function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
+
+                var container = d3.select("body")
+                    .append("table")
+
+                    .selectAll("tr")
+                        .data(parsedCSV).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+        </script>
+	</div>
+</div>
+ </div>
+
+</body>
+</html>
