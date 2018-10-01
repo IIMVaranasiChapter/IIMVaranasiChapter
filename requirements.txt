@@ -25,6 +25,12 @@ dj_database_url == 0.4.2
 
 # iim/wsgi.py: 13
 whitenoise == 3.3.1
+
+
+
 psycopg2==2.7.4
 Pillow
+
+
+
 
